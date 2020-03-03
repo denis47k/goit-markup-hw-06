@@ -143,6 +143,8 @@ NAV
   font-family: 'Roboto', sans-serif;
   text-transform: uppercase;
   font-weight: lighter;
+  margin: 0px;
+  padding: 0px;
 }
 
 .logo-link {
@@ -277,12 +279,11 @@ p.bold-text {
 ICON
  */
 .setting::before {
+  content: '';
   display: flex;
   margin-bottom: 60px;
   margin-left: auto;
   margin-right: auto;
-
-  content: '';
   width: 66px;
   height: 66px;
   background-image: url(../img/icons/setting.png);
@@ -290,11 +291,11 @@ ICON
 }
 
 .money::before {
+  content: '';
   display: flex;
   margin-bottom: 60px;
   margin-left: auto;
   margin-right: auto;
-  content: '';
   width: 58px;
   height: 66px;
   background-image: url(../img/icons/money.png);
@@ -302,11 +303,11 @@ ICON
 }
 
 .worldwide::before {
+  content: '';
   display: flex;
   margin-bottom: 60px;
   margin-left: auto;
   margin-right: auto;
-  content: '';
   width: 58px;
   height: 66px;
   background-image: url(../img/icons/worldw.png);
@@ -314,11 +315,11 @@ ICON
 }
 
 .shipping::before {
+  content: '';
   display: flex;
   margin-bottom: 60px;
   margin-left: auto;
   margin-right: auto;
-  content: '';
   width: 66px;
   height: 66px;
   background-image: url(../img/icons/w2.png);
@@ -334,17 +335,16 @@ ICON
   padding-bottom: 100px;
   background-color: #e9f0fd;
 }
-.collection-item:nth-last-child(n + 1) {
-  margin-bottom: 0px;
-}
+
 .card-overlay::before {
-  display: none;
   content: '';
   position: absolute;
   width: 235px;
   height: 230px;
+  top: 100%;
   background-color: rgba(15, 1, 1, 0.55);
-  border: 10px solid rgba(255, 255, 255, 0.55);
+  border: 10px solid rgba(255, 255, 255, 0.9);
+  transition: top 250ms cubic-bezier(0, 0, 0.58, 1);
 }
 .card-liste {
   display: flex;
@@ -380,7 +380,7 @@ ICON
   background-color: #e9f0fd;
 }
 .actions {
-  display: none;
+  display: flex;
   flex-wrap: wrap;
   width: 170px;
   margin: 0px;
@@ -389,6 +389,8 @@ ICON
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 250ms cubic-bezier(0, 0, 0.58, 1) 250ms;
 }
 .button-icon {
   position: relative;
@@ -398,6 +400,7 @@ ICON
   background-color: rgba(26, 188, 156, 0);
   margin-right: 10px;
   margin-bottom: 10px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .icon-like::before {
   content: '';
@@ -463,6 +466,7 @@ ICON
   letter-spacing: -0.02em;
   background-color: #323232;
   padding: 17px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* 
   SECTION PRODUCTS
@@ -480,11 +484,11 @@ ICON
 }
 .card-item:hover .card-overlay::before,
 .card-item:focus .card-overlay::before {
-  display: block;
+  top: 0;
 }
 .card-item:hover .actions,
 .card-item:focus .actions {
-  display: flex;
+  opacity: 1;
 }
 .button-icon:hover,
 .button-icon:focus {
@@ -502,6 +506,7 @@ ICON
   background-color: #323232;
   position: relative;
   z-index: 3;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .name-products {
   padding: 14px 0px 14px 14px;
@@ -523,6 +528,7 @@ ICON
   font-weight: 900;
   color: #fff;
   background-color: #8c8c8c;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 /*
  SECTION NEWS
@@ -597,6 +603,7 @@ ICON
   text-align: center;
   letter-spacing: -0.02em;
   line-height: 26px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .button:hover,
 .button:focus {
@@ -628,6 +635,7 @@ ICON
   background-repeat: no-repeat;
   background-position: center;
   cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .button-email:hover,
 .button-email:focus {
